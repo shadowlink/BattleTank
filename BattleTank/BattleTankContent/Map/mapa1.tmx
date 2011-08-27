@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="24" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Bosque" tilewidth="32" tileheight="32">
+  <image source="forest.png" trans="ffffff" width="629" height="679"/>
+ </tileset>
+ <layer name="Suelo" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMAiDfyf7ZDHLY6CVVVVVfHH71nwE=
+  </data>
+ </layer>
+ <layer name="Solidos" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzV1LlPwzAUx3EXVu5rBVUdylpWZpiAGVoK7G0Jx99c7mPlLF9LL1JkNYn7sIOw8tGzoyS/5CnJ0Bhzg1vc4R4PeIxQrSc84wWveMM7PvCJL3xjFKFapsaGKUyjhVnMYR4LWMRShGotYwWrWMMMNmqm8tGU/HVFfj1gfsvJr5fQ5rvnND36n5dTdo/jzsvLL+p/Uf6kIy/f7b/mWr/J17z/IfOrev+1/fd5l9LRKMnPnufb/xDf+rjr+PY/dr6m/0XH+n6zk/Tf5/+izQ/Zf03+f+h/rPxN5f8nxEjzbf+3/ih/W/q/g90K72GPrH15/iHrQ+oRujna6Mj8OLO/I+t2Zt516olzLbs+xZk8f0/0MUCCc6nu3N3nHnchNZ0nmXUi+y5xhWsc4AcW5GlL
+  </data>
+ </layer>
+ <layer name="Traspasable" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4B0oDzA9pJjP7304NJHTfvp6ZdR+4kzSxCIhWhgPylpSZUMs8ixnxxATf8PZvupmWdJtYMW9g+0/0e6/aNgFNAKAAD06AV7
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010 Express for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleTank", "BattleTank\BattleTank\BattleTank.csproj", "{DF901EF5-C1D9-421E-8477-D1D634F0C1C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleTankContent", "BattleTank\BattleTankContent\BattleTankContent.contentproj", "{726A4289-3DE5-48BB-B2FC-992214965A2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF901EF5-C1D9-421E-8477-D1D634F0C1C4}.Debug|x86.ActiveCfg = Debug|x86
+		{DF901EF5-C1D9-421E-8477-D1D634F0C1C4}.Debug|x86.Build.0 = Debug|x86
+		{DF901EF5-C1D9-421E-8477-D1D634F0C1C4}.Release|x86.ActiveCfg = Release|x86
+		{DF901EF5-C1D9-421E-8477-D1D634F0C1C4}.Release|x86.Build.0 = Release|x86
+		{726A4289-3DE5-48BB-B2FC-992214965A2E}.Debug|x86.ActiveCfg = Debug|x86
+		{726A4289-3DE5-48BB-B2FC-992214965A2E}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

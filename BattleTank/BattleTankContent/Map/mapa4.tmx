@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="34" height="19" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="tile2" tilewidth="40" tileheight="40" spacing="4">
+  <image source="tile2.png" trans="ffffff" width="128" height="40"/>
+ </tileset>
+ <layer name="Solidos" width="34" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAEzDTGxAJS1JIKhoM7KHEXJWYRo5fYuKe1O+hh1qg7COsllB6ILS+GizvIBaPuGHnuIKU+HY7hQU0wVN1B7/YYALO0Abc=
+  </data>
+ </layer>
+</map>
