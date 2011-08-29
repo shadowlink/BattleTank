@@ -26,15 +26,19 @@ namespace BattleTank
             this.graphics.PreferredBackBufferWidth = 1360;
             this.graphics.PreferredBackBufferHeight = 760;
             this.graphics.IsFullScreen = false;
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
+            Window.Title = "BattleTank v0.5.1";
             Content.RootDirectory = "Content";
 
             _stateManager = new StateManager(this);
             Components.Add(_stateManager);
+            Components.Add(new GamerServicesComponent(this));
 
             Services.AddService(typeof(ContentManager), Content);
             Services.AddService(typeof(StateManager), _stateManager);
             Services.AddService(typeof(GraphicsDeviceManager), graphics);
+
+
         }
 
         protected override void Initialize()

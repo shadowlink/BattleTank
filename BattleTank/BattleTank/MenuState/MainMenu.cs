@@ -44,6 +44,7 @@ namespace BattleTank
 
         public override void LoadContent()
         {
+            //Texturas
             _titulo = Content.Load<Texture2D>("graphics/Gui/Titulo");
             _jugar = Content.Load<Texture2D>("graphics/Gui/Jugar");
             _opciones = Content.Load<Texture2D>("graphics/Gui/Opciones");
@@ -51,6 +52,7 @@ namespace BattleTank
             _flecha = Content.Load<Texture2D>("graphics/Gui/Flecha");
             _fuente = Content.Load<SpriteFont>("fonts/gameFont");
 
+            //Sonidos
             _menuIter = Content.Load<SoundEffect>("sound/SFX/SoundIter");
         }
 
@@ -131,7 +133,7 @@ namespace BattleTank
             }
 
             _spriteBatch.DrawString(_fuente, "Copyright (C) 2011 ShadowLink", new Vector2(10, 738), Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            _spriteBatch.DrawString(_fuente, "v 0.4", new Vector2(1320, 738), Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            _spriteBatch.DrawString(_fuente, "v 0.5.1", new Vector2(1315, 738), Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
             _spriteBatch.End();
         }
     }

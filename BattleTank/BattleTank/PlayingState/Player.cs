@@ -34,6 +34,12 @@ namespace BattleTank
         public int frameHeight;
         private TimeSpan _previousRotation;
         private TimeSpan _tiempoRotacion;
+        //Sombras
+        private byte shadowAlpha;
+        private int shadowOffsetX;
+        private int shadowOffsetY;
+        private float shadowRotation;
+        Color _colorSombra;
         #endregion
 
         #region Propiedades
@@ -66,6 +72,13 @@ namespace BattleTank
             //Velocidad de movimiento
             _speed = 2.0f;
 
+            //Sombras
+            shadowAlpha = 50;
+            _colorSombra = new Color(0, 0, 0, shadowAlpha);
+            shadowOffsetX = 5;
+            shadowOffsetY = -5;
+            shadowRotation = -1f;
+
             //Datos para el cuadrado de colision
             posOff = new Vector2(6, 1);
             widthOff = 56;
@@ -79,7 +92,7 @@ namespace BattleTank
             _tiempoRotacion = TimeSpan.FromSeconds(.20f);
 
             //Frame de la secuencia que se va a dibujar
-            _sourceRect = new Rectangle((frameWidth * _actualFrame)+_actualFrame+1, 1, frameWidth, frameHeight);
+            _sourceRect = new Rectangle(0, 0, frameWidth, frameHeight);
         }
 
         public void Initialize(Texture2D textura)
@@ -257,7 +270,7 @@ namespace BattleTank
 
         public void Draw(GameTime gameTime)
         {
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
 
             for (int i = 0; i < _listProyectil.Count; i++)
             {
@@ -269,6 +282,7 @@ namespace BattleTank
                 //_spriteBatch.Draw(_texturaFrame, _destinationRect, _sourceRect, Color.White);
                 //_spriteBatch.Draw(_texturaFrame, _pos, null, Color.White);
                 _spriteBatch.Draw(_texturaFrame, _pos, null, Color.White, MathHelper.ToRadians(-_anguloRotacion) ,new Vector2(_texturaFrame.Width/2, _texturaFrame.Height/2), 1.0f, SpriteEffects.None, 0f);
+                _spriteBatch.Draw(_texturaFrame, new Vector2(_pos.X + shadowOffsetX, _pos.Y - shadowOffsetY), null, _colorSombra, MathHelper.ToRadians(-_anguloRotacion), new Vector2(_texturaFrame.Width / 2, _texturaFrame.Height/2), 1f, SpriteEffects.None, 0.5f);
                 //_animacion.Draw(_spriteBatch, _textura);
             }
             _spriteBatch.End();
