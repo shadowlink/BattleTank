@@ -18,6 +18,7 @@ namespace BattleTank
         StateManager _stateManager;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        public int pepe;
         #endregion
 
         public Game1()
@@ -27,7 +28,8 @@ namespace BattleTank
             this.graphics.PreferredBackBufferHeight = 760;
             this.graphics.IsFullScreen = false;
             this.IsMouseVisible = false;
-            Window.Title = "BattleTank v0.5.1";
+        
+            Window.Title = "BattleTank v0.6";
             Content.RootDirectory = "Content";
 
             _stateManager = new StateManager(this);
@@ -45,6 +47,7 @@ namespace BattleTank
         {
             _stateManager.Estados.Add(GameStates.PlayingState, new Playing(this));
             _stateManager.Estados.Add(GameStates.MainMenu, new MainMenu(this));
+            _stateManager.Estados.Add(GameStates.PrePlayState, new PrePlaystate(this));
 
             _stateManager._estadoActual = GameStates.MainMenu;
             base.Initialize();

@@ -19,6 +19,9 @@ namespace BattleTank
         TileLayer _solidos;
         public List<Player> _listaPlayers;
         private Game _game;
+        private DateTime startRumble;
+        private TimeSpan timeRumblePass;
+        private SoundEffect _impacto;
         #endregion
 
         public void Initialize(Map map, Game game)
@@ -27,6 +30,9 @@ namespace BattleTank
             _solidos = mapa.GetLayer("Solidos") as TileLayer;
             _listaPlayers = new List<Player>();
             _game = game;
+            
+            //Sonidos
+            _impacto = _game.Content.Load<SoundEffect>("sound/SFX/Impacto");
         }
 
         public void Update(Map map)
@@ -46,7 +52,6 @@ namespace BattleTank
             bool colision = false;
             Rectangle rectangle1;
             Rectangle rectangle2;
-            Texture2D tileMapa;
             Color[] dataMap;
             int x = 0, y = 0;
             Vector2 entityOrigin = new Vector2(entity._texturaFrame.Width / 2, entity._texturaFrame.Height / 2);
@@ -56,8 +61,8 @@ namespace BattleTank
             Matrix.CreateRotationZ(-MathHelper.ToRadians(entity._anguloRotacion)) *
             Matrix.CreateTranslation(new Vector3(entity._pos, 0.0f));
             rectangle1 = CalculateBoundingRectangle(new Rectangle(0, 0, entity._texturaFrame.Width, entity._texturaFrame.Height), entityTransform);
-            
-            for (int i = _listaPlayers.Count - 1; i >= 0; i--)
+
+            for (int i = 0; i < _listaPlayers.Count; i++)
             {
                 if (_listaPlayers[i] != player)
                 {
@@ -67,7 +72,7 @@ namespace BattleTank
                     Matrix.CreateRotationZ(-MathHelper.ToRadians(_listaPlayers[i]._anguloRotacion)) *
                     Matrix.CreateTranslation(new Vector3(_listaPlayers[i]._pos, 0.0f));
                     rectangle2 = CalculateBoundingRectangle(new Rectangle(0, 0, _listaPlayers[i]._texturaFrame.Width, _listaPlayers[i]._texturaFrame.Height), entityTransform2);
-                    
+
                     if(rectangle1.Intersects(rectangle2))
                     {
                         if (IntersectPixels(entityTransform, entity._texturaFrame.Width,
@@ -75,11 +80,13 @@ namespace BattleTank
                                         entityTransform2, _listaPlayers[i]._texturaFrame.Width,
                                         _listaPlayers[i]._texturaFrame.Height, _listaPlayers[i].textureData))
                         {
+                            _impacto.Play();
                             _listaPlayers[i]._vida -= entity._daño;
+                            //_listaPlayers[i]._rumble.RumbleDisparo();
                             if (_listaPlayers[i]._vida <= 0)
                             {
                                 _listaPlayers[i]._activo = false;
-                                _listaPlayers.RemoveAt(i);
+                                //_listaPlayers.RemoveAt(i);
                             }
                             colision = true;
                             

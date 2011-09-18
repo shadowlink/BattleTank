@@ -10,6 +10,7 @@ namespace BattleTank
         MainMenu,
         Options,
         Loading,
-        PlayingState
+        PlayingState,
+        PrePlayState
     }
 }

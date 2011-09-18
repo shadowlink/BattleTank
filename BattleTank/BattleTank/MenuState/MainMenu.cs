@@ -27,6 +27,8 @@ namespace BattleTank
         TimeSpan _movementTime;
         SpriteFont _fuente;
         SoundEffect _menuSelect, _menuIter;
+        Song _menuSound;
+        bool _songStart;
         #endregion
 
         public MainMenu(Game game) : base(game)
@@ -34,6 +36,7 @@ namespace BattleTank
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _opcionActual = Opcion.Jugar;
             _movementTime = TimeSpan.FromSeconds(.20f);
+            _songStart = false;
         }
 
         public override void Initialize()
@@ -54,11 +57,21 @@ namespace BattleTank
 
             //Sonidos
             _menuIter = Content.Load<SoundEffect>("sound/SFX/SoundIter");
+            _menuSelect = Content.Load<SoundEffect>("sound/SFX/Soundselect");
+            _menuSound = Content.Load<Song>("sound/Music/Menu");
+            MediaPlayer.IsRepeating = true;
         }
 
 
         public override void Update(GameTime gameTime)
         {
+
+            if (!_songStart)
+            {
+                MediaPlayer.Play(_menuSound);
+                _songStart = true;
+            }  
+
             if (Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.Up))
             {
                 if (gameTime.TotalGameTime - _previousGameTime > _movementTime)
@@ -96,12 +109,13 @@ namespace BattleTank
 
             if (Keyboard.GetState().IsKeyDown(Keys.Enter) || Keyboard.GetState().IsKeyDown(Keys.Space))
             {
+                _menuSelect.Play();
                 switch (_opcionActual)
                 {
                     case Opcion.Jugar:
-                        Manager.Estados[GameStates.PlayingState].Initialize();
-                        Manager.Estados[GameStates.PlayingState].LoadContent();
-                        Manager._estadoActual = GameStates.PlayingState;
+                        Manager.Estados[GameStates.PrePlayState].Initialize();
+                        Manager.Estados[GameStates.PrePlayState].LoadContent();
+                        Manager._estadoActual = GameStates.PrePlayState;
                         break;
                     case Opcion.Salir:
                         this.Game.Exit();
@@ -133,7 +147,7 @@ namespace BattleTank
             }
 
             _spriteBatch.DrawString(_fuente, "Copyright (C) 2011 ShadowLink", new Vector2(10, 738), Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            _spriteBatch.DrawString(_fuente, "v 0.5.1", new Vector2(1315, 738), Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            _spriteBatch.DrawString(_fuente, "v 0.6", new Vector2(1315, 738), Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
             _spriteBatch.End();
         }
     }

@@ -41,7 +41,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="TiledPipelineExtensions">
-      <HintPath>..\..\TiledPipelineExtensions\bin\x86\Debug\TiledPipelineExtensions.dll</HintPath>
+      <HintPath>..\..\TiledPipelineExtensions\TiledPipelineExtensions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,13 +63,6 @@
       <Name>gameFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Graphics\Chars\tanque.png">
-      <Name>tanque</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -123,13 +116,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graphics\Chars\tanque2.png">
-      <Name>tanque2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Map\mapa3.tmx">
       <Name>mapa3</Name>
       <Importer>TmxImporter</Importer>
@@ -144,15 +130,58 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graphics\Chars\tanque1_1.png">
-      <Name>tanque1_1</Name>
+    <Compile Include="Graphics\Chars\tanque1.png">
+      <Name>tanque1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Graphics\Chars\tanque2.png">
+      <Name>tanque2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Graphics\Chars\tanque3.png">
+      <Name>tanque3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Graphics\Chars\tanque4.png">
+      <Name>tanque4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graphics\Chars\tanque2_2.png">
-      <Name>tanque2_2</Name>
+    <Compile Include="Sound\Music\Menu.mp3">
+      <Name>Menu</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sound\SFX\SoundSelect.wav">
+      <Name>SoundSelect</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sound\SFX\Impacto.wav">
+      <Name>Impacto</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sound\SFX\Disparo.wav">
+      <Name>Disparo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Graphics\Gui\Marco.png">
+      <Name>Marco</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
